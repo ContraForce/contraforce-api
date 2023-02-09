@@ -42,6 +42,7 @@ If you are test the API calls using **Postman**, you can set the API key as show
 
 ## Testing the ContraForce Partner API
 After you obtain your API key, you can send a test request to make sure that everything is right for you:
+
 ![](https://img.shields.io/badge/HTTP-GET-green)
 ```
 https://portal.contraforce.com/api/beta/partners
