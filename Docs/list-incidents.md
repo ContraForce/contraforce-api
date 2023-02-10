@@ -95,7 +95,7 @@ When providing an invalid ***tenantId*** you will receive the status response **
 
 	"title": "File with Extension 'exe' Downloaded from SharePoint - Office 365",
 
-	"description": "reynhardt@securicom.co.za downloaded TFTP-Server-Installer (1).exe from https://securicomza-my.sharepoint.com/personal/dylan_securicom_co_za/.\n\nIt is recommended to use application control to prevent or block potentially malicious applications from running, limit file and directory permissions, use mitigation tools that detect and mitigate common features used in exploitation, and ensure users are able to spot phishing emails.\n\nFor more information on this particular technique, please visit the following MITRE article to learn more: https://attack.mitre.org/techniques/T1080/",
+	"description": "",
 
 	"number": 915,
 
@@ -151,7 +151,7 @@ When providing an invalid ***tenantId*** you will receive the status response **
 
 	"title": "New Executable Uploaded to SharePoint or OneDrive - Office 365",
 
-	"description": "The user 'dylan@securicom.co.za' uploaded an executable file with either of the extensions 'exe', 'inf', 'gzip', 'cmd', 'bat' to https://securicomza-my.sharepoint.com/personal/dylan_securicom_co_za/ from IP 154.70.214.244. This may be an indication of a staging location for malware or other malicious activity.\n\nIt is recommended to implement network intrusion prevention and detection systems\n\nFor more information on this particular technique(s), please visit the following MITRE article(s) to learn more: https://attack.mitre.org/techniques/T1105/\n\nAn executable file type with either of the extensions 'exe', 'inf', 'gzip', 'cmd', 'bat' was uploaded to SharePoint or OneDrive. This may be indication of a staging location for malware or other malicious activity.\n\nIt is recommended to implement network intrusion prevention and detection systems\n\nFor more information on this particular technique(s), please visit the following MITRE article(s) to learn more: https://attack.mitre.org/techniques/T1105/\n\n",
+	"description": "The user ",
 
 	"number": 914,
 
