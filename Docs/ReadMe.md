@@ -11,10 +11,10 @@ The incidents API allows you to achieve the following:
 
 This document covers the following topics
 - [Overview](#overview)
-  - [Multi-tenancy in ContraForce](#multi-tenancy-in-contraforce)
-  - [Authentication for the ContraForce Partner API](#authentication-for-the-contraforce-partner-api)
-  - [Testing the ContraForce Partner API](#testing-the-contraforce-partner-api)
-  - [ContraForce Partner API Endpoints](#contraforce-partner-api-endpoints)
+	- [Multi-tenancy in ContraForce](#multi-tenancy-in-contraforce)
+	- [Authentication for the ContraForce Partner API](#authentication-for-the-contraforce-partner-api)
+	- [Testing the ContraForce Partner API](#testing-the-contraforce-partner-api)
+	- [ContraForce Partner API Endpoints](#contraforce-partner-api-endpoints)
 
 ## Multi-tenancy in ContraForce
 Through the ContraForce Partner program, partners can onboard and manage their own customers to ContraForce. By using the ContraForce Partners API, you can retrieve the data from ContraForce for your own organization or your customer organizations. 
@@ -56,7 +56,8 @@ Once you submit the request successfully you should get a JSON response with a w
 
 ## ContraForce Partner API Endpoints
 Following links provide a detailed documentation about each available endpoint in the current beta version of the ContraForce Partner API
-- List Incidents 
-- Get Incident by Id
-- List Incident Entities
-- List Incident Evidence
+  - [Incident Object](https://github.com/ContraForce/contraforce-api/blob/main/Docs/incident-object.md)
+  - [List Incidents Request](https://github.com/ContraForce/contraforce-api/blob/main/Docs/list-incidents.md)
+  - [Get Incident Details Request](https://github.com/ContraForce/contraforce-api/blob/main/Docs/get-incident-details.md)
+  - [List Incident Entities Request](https://github.com/ContraForce/contraforce-api/blob/main/Docs/list-incident-entities.md)
+  - [List Incident Evidence Request](https://github.com/ContraForce/contraforce-api/blob/main/Docs/list-incident-evidence.md)
