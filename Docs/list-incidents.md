@@ -62,20 +62,22 @@ GET /incidents?tenantId=a1d9fe42-913e-4204-af1b-31b9a76b4d73&take=10&startDate=2
 ![](https://img.shields.io/badge/Response-200-green)
 
 In case the request processed successfully, the response of the list incidents request represents an object that contains the following in a JSON format:
+
 | Property | Description | Sample Value |
-|--|--|--|--|
+|--|--|--|
 | value | Object represents a page contains list of incidents and a next page token if it's there | [Incidents List Object](#incidents-list-object) | 
 | message | The status of the request or the error message in case of request failure | Incidents have been retrieved successfully! |
 AAAAABBBCCCEDFASDF.....|
-| isSuccess | It has the value of true | true
+| isSuccess | It has the value of true | true |
 
 ![](https://img.shields.io/badge/Response-400-red)
 
 In case of something is not correct you will receive an object similar to the one above but without the ***value*** and in this case you can look at the ***message*** property to know more about the error.   
+
 | Property | Description | Sample Value |
-|--|--|--|--|
+|--|--|--|
 | message | Description of the error and what went wrong | Next page token is invalid |
-| isSuccess | false | false
+| isSuccess | false | false |
 
 ![](https://img.shields.io/badge/Response-401-red)
 
@@ -89,7 +91,7 @@ When providing an invalid ***tenantId*** you will receive the status response **
 The ***value*** property of the full response contains an object represents a page of incidents, it contains the following: 
 
 | Property | Description | Sample Value |
-|--|--|--|--|
+|--|--|--|
 | nextPageLink | Token that represents the next set of incidents to be retrieved (It can be send with the ***token*** parameter in another request) | FJOEOBrklwmc8cjowpxzlwqcoeaabkpelxn43DA... |
 | incidents | The array of the incidents retrieved | [ [Incident Object](#incident-object) ]
 
