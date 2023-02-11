@@ -26,7 +26,7 @@ To list all the entities involved with a specific incident in your tenant or any
 
 
 ## Parameters 
-The List incident details *GET* accepts two parameters only, the Id of the incident and the target tenant id: 
+The List incident evidence *GET* accepts two parameters only, the Id of the incident and the target tenant id: 
 
 |Parameter | Description | Usage | Default Value | Format | Required|
 |--|--|--|--|--|--|
