@@ -1,10 +1,12 @@
 # Overview
 ContraForce API provides you access to the ContraForce data using various exposed API endpoints. 
 The incidents API allows you to achieve the following: 
-- Query list of incidents using various filters.
-- Retrieve a full incident detail 
-- Retrieve list of incident entities  
-- Retrieve list of incident evidence
+  - [List Incidents Request](https://github.com/ContraForce/contraforce-api/blob/main/Docs/list-incidents.md)
+  - [Get Incident Details Request](https://github.com/ContraForce/contraforce-api/blob/main/Docs/get-incident-details.md)
+  - [List Incident Entities Request](https://github.com/ContraForce/contraforce-api/blob/main/Docs/list-incident-entities.md)
+  - [List Incident Evidence Request](https://github.com/ContraForce/contraforce-api/blob/main/Docs/list-incident-evidence.md)
+
+To learn more about the ContraForce **Incident Object** please refer to  [ContraForce Incident Object](https://github.com/ContraForce/contraforce-api/blob/main/Docs/incident-object.md)
 
 > ContraForce Partners API is currently in beta, in case of errors or unexpected behaviors, feel free to submit a new issue [here](https://github.com/ContraForce/contraforce-api/issues/new) 
 > The final version is currently planned to be released for Q2 in 2022
@@ -18,7 +20,9 @@ This document covers the following topics
 
 ## Multi-tenancy in ContraForce
 Through the ContraForce Partner program, partners can onboard and manage their own customers to ContraForce. By using the ContraForce Partners API, you can retrieve the data from ContraForce for your own organization or your customer organizations. 
+
 ![ContraForce Multi-Tenancy Diagram](https://raw.githubusercontent.com/ContraForce/contraforce-api/main/Images/Multi-Tenancy%20Flow%20for%20Partners.drawio.svg)
+
 Based on the previous flow, if you are a ContraForce partner, you should be able to access all your data and your direct customers data using the ContraForce Partner API.
 That's why any request you send to the ContraForce Partner API, the **Tenant Id** is a mandatory parameter. 
 
@@ -56,8 +60,4 @@ Once you submit the request successfully you should get a JSON response with a w
 
 ## ContraForce Partner API Endpoints
 Following links provide a detailed documentation about each available endpoint in the current beta version of the ContraForce Partner API
-  - [Incident Object](https://github.com/ContraForce/contraforce-api/blob/main/Docs/incident-object.md)
-  - [List Incidents Request](https://github.com/ContraForce/contraforce-api/blob/main/Docs/list-incidents.md)
-  - [Get Incident Details Request](https://github.com/ContraForce/contraforce-api/blob/main/Docs/get-incident-details.md)
-  - [List Incident Entities Request](https://github.com/ContraForce/contraforce-api/blob/main/Docs/list-incident-entities.md)
-  - [List Incident Evidence Request](https://github.com/ContraForce/contraforce-api/blob/main/Docs/list-incident-evidence.md)
+
