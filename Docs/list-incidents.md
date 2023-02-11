@@ -2,10 +2,16 @@
 List incidents endpoint allows you to retrieve list of the incidents in your tenant or any of your managed customer tenants.
 
 This document covers the following topics:
-- [List Incidents Request](#list-incident-requests)
-- [Parameters](#authentication)
-- [Response](#authentication)
-- [Demo Request and Response](#authentication)
+- [List Incidents](#list-incidents)
+  - [List Incidents Request](#list-incidents-request)
+  - [Parameters](#parameters)
+    - [Retrieve latest 10 incidents in the last week](#retrieve-latest-10-incidents-in-the-last-week)
+    - [Retrieve all the incidents of January 2023](#retrieve-all-the-incidents-of-january-2023)
+  - [Response](#response)
+    - [Incidents List Object](#incidents-list-object)
+    - [Sample response](#sample-response)
+  - [Demo Request and Response](#demo-request-and-response)
+
 
 > List incidents endpoint is authenticated and an API key is required to access the resources. 
 > Check out the [Authentication section in the ContraForce API Overview](https://github.com/ContraForce/contraforce-api/tree/main/Docs#authentication-for-the-contraforce-partner-api) to learn more.
@@ -55,9 +61,9 @@ GET /incidents?tenantId=a1d9fe42-913e-4204-af1b-31b9a76b4d73&take=10&startDate=2
 In case the request processed successfully, the response of the list incidents request represents an object that contains the following in a JSON format:
 | Property | Description | Sample Value |
 |--|--|--|--|
-| Value | Array of incident object | | 
+| value | Object represents a page contains list of incidents and a next page token if it's there | [Incidents List Object](#incidents-list-object) | 
 | message | The status of the request or the error message in case of request failure | Incidents have been retrieved successfully! |
-| nextPageToken | (Nullable) only has a value if more data is available for the same request, so you can use the value provided to send another request with a ***token*** parameter to retrieve the rest | AAAAABBBCCCEDFASDF.....|
+AAAAABBBCCCEDFASDF.....|
 | isSuccess | It has the value of true | true
 
 ![](https://img.shields.io/badge/Response-400-red)
@@ -75,147 +81,132 @@ In case of unauthenticated request, you will receive the status response **401**
 ![](https://img.shields.io/badge/Response-404-red)
 When providing an invalid ***tenantId*** you will receive the status response **404**
 
+### Incidents List Object 
+
+The ***value*** property of the full response contains an object represents a page of incidents, it contains the following: 
+
+| Property | Description | Sample Value |
+|--|--|--|--|
+| nextPageLink | Token that represents the next set of incidents to be retrieved (It can be send with the ***token*** parameter in another request) | FJOEOBrklwmc8cjowpxzlwqcoeaabkpelxn43DA... |
+| incidents | The array of the incidents retrieved | [ [Incident Object](#incident-object) ]
+
+Following is a sample
+``` JSON 
+{
+        "nextPageLink": "FJOEOBrklwmc8cjowpxzlwqcoeaabkpelxn43DA...",
+        "incidents": [
+            {
+                "id": "2b460d82-ffd3-2a6e-a513-ded250099e33",
+                "name": null,
+                "title": "File with Extension 'exe' Downloaded from SharePoint - Office 365",
+                "description": "The user 'test@example.com' uploaded an executable file with either of the extensions  'exe', 'inf', 'gzip', 'cmd', 'bat' to ....",
+                "number": 111,
+                "type": null,
+                "lastModificationTime": "2023-02-09T10:38:47.0111424Z",
+                "creationTime": "2023-02-09T10:38:47.0111424Z",
+                "lastActivityTime": "2023-02-09T09:31:22Z",
+                "severity": 4,
+                "classification": null,
+                "comment": null,
+                "classificationReason": null,
+                "classificationComment": null,
+                "tactics": null,
+                "ruleIds": null,
+                "alertProductNames": null,
+                "user": {
+                    "id": null,
+                    "displayName": null,
+                    "email": null
+                },
+                "isAssigned": true,
+                "productId": null,
+                "status": 2,
+                "alertsCount": 1
+            }
+            ... More Incidents here 
+        ]
+    }
+```
+
 ### Sample response 
+
+To know more details about the Incident object please referee to [Incident Object](#incident-object)
+
 ``` JSON
 {
-
 	"value": {
-
-	"nextPageLink": null,
-
-	"previousPageLink": null,
-
-	"incidents": [
-
-	{
-
-	"id": "2b460d82-ffd3-2a6e-a513-ded250099e33",
-
-	"name": null,
-
-	"title": "File with Extension 'exe' Downloaded from SharePoint - Office 365",
-
-	"description": "",
-
-	"number": 915,
-
-	"type": null,
-
-	"lastModificationTime": "2023-02-09T10:38:47.0111424Z",
-
-	"creationTime": "2023-02-09T10:38:47.0111424Z",
-
-	"lastActivityTime": "2023-02-09T09:31:22Z",
-
-	"severity": 4,
-
-	"classification": null,
-
-	"comment": null,
-
-	"classificationReason": null,
-
-	"classificationComment": null,
-
-	"tactics": null,
-
-	"ruleIds": null,
-
-	"alertProductNames": null,
-
-	"user": {
-
-	"id": null,
-
-	"displayName": null,
-
-	"email": null
-
-	},
-
-	"isAssigned": true,
-
-	"productId": null,
-
-	"status": 2,
-
-	"alertsCount": 1
-
-	},
-
-	{
-
-	"id": "cc976c97-2ae0-b8d1-2752-f8c2c20d3c77",
-
-	"name": null,
-
-	"title": "New Executable Uploaded to SharePoint or OneDrive - Office 365",
-
-	"description": "The user ",
-
-	"number": 914,
-
-	"type": null,
-
-	"lastModificationTime": "2023-02-09T09:36:01.884117Z",
-
-	"creationTime": "2023-02-09T09:36:01.884117Z",
-
-	"lastActivityTime": "2023-02-09T09:28:13Z",
-
-	"severity": 2,
-
-	"classification": null,
-
-	"comment": null,
-
-	"classificationReason": null,
-
-	"classificationComment": null,
-
-	"tactics": null,
-
-	"ruleIds": null,
-
-	"alertProductNames": null,
-
-	"user": {
-
-	"id": null,
-
-	"displayName": null,
-
-	"email": null
-
-	},
-
-	"isAssigned": true,
-
-	"productId": null,
-
-	"status": 2,
-
-	"alertsCount": 1
-
-	},
-	...
-
-		}
-
-	]
-
-	},
-
-	"message": "50 have been retrieved successfully",
-
+        "nextPageLink": "FJOEOBrklwmc8cjowpxzlwqcoeaabkpelxn43DA...",
+        "incidents": [
+            {
+                "id": "2b460d82-ffd3-2a6e-a513-fggffgd4343543",
+                "name": null,
+                "title": "File with Extension 'exe' Downloaded from SharePoint - Office 365",
+                "description": "The user 'test@example.com' uploaded an executable file with either of the extensions  'exe', 'inf', 'gzip', 'cmd', 'bat' to ....",
+                "number": 111,
+                "type": null,
+                "lastModificationTime": "2023-02-09T10:38:47.0111424Z",
+                "creationTime": "2023-02-09T10:38:47.0111424Z",
+                "lastActivityTime": "2023-02-09T09:31:22Z",
+                "severity": 4,
+                "classification": null,
+                "comment": null,
+                "classificationReason": null,
+                "classificationComment": null,
+                "tactics": null,
+                "ruleIds": null,
+                "alertProductNames": null,
+                "user": {
+                    "id": null,
+                    "displayName": null,
+                    "email": null
+                },
+                "isAssigned": true,
+                "productId": null,
+                "status": 2,
+                "alertsCount": 1
+            },
+            {
+                "id": "2b460d82-ffd3-2a6e-a513-fggffgd4343543",
+                "name": null,
+                "title": "File with Extension 'exe' Downloaded from SharePoint - Office 365",
+                "description": "The user 'test@example.com' uploaded an executable file with either of the extensions  'exe', 'inf', 'gzip', 'cmd', 'bat' to ....",
+                "number": 111,
+                "type": null,
+                "lastModificationTime": "2023-02-09T10:38:47.0111424Z",
+                "creationTime": "2023-02-09T10:38:47.0111424Z",
+                "lastActivityTime": "2023-02-09T09:31:22Z",
+                "severity": 4,
+                "classification": null,
+                "comment": null,
+                "classificationReason": null,
+                "classificationComment": null,
+                "tactics": null,
+                "ruleIds": null,
+                "alertProductNames": null,
+                "user": {
+                    "id": null,
+                    "displayName": null,
+                    "email": null
+                },
+                "isAssigned": true,
+                "productId": null,
+                "status": 2,
+                "alertsCount": 1
+            }
+        ]
+    }
+	"message": "2 Incidents have been retrieved successfully",
 	"isSuccess": true
-
 }
 ```
 
-## ContraForce Partner API Endpoints
-Following links provide a detailed documentation about each available endpoint in the current beta version of the ContraForce Partner API
-- List Incidents 
-- Get Incident by Id
-- List Incident Entities
-- List Incident Evidence
+## Demo Request and Response 
+ContraForce Parnter API allows you to test the call quickly using a demo endpoints. 
+In the development environment you can use the demo enpoints so the parameters passed won't be vaildated and you will be retrieving a valid response with sample data everytime even if there was no data for the time period or the passed query, that makes your development experience faster and smoother. 
+
+> The demo request also requires an API Key, but any parameters passed will be ignored in the result, as you will always get the same result. 
+
+``` HTTP
+GET /api/beta/partners/demo/incidents?
+```
+
