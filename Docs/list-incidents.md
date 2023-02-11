@@ -23,7 +23,7 @@ To list all the incidents in your tenant or any of your managed customer's tenan
 
 ``` HTTP
  GET 
- https://portal.contraforce.com/api/beta/partners/incidents?tenantId=[TARGET_TENANT_ID]
+ /https://portal.contraforce.com/api/beta/partners/incidents?tenantId=[TARGET_TENANT_ID]
 ```
 Not all the incidents are being retrieved at once, when you send the request only top 50 incidents will be retrieved with a token that you can send in the parameters to retrieve the next chunk and so on. 
 
