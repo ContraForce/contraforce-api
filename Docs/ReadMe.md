@@ -21,7 +21,7 @@ This document covers the following topics
 ## Multi-tenancy in ContraForce
 Through the ContraForce Partner program, partners can onboard and manage their own customers to ContraForce. By using the ContraForce Partners API, you can retrieve the data from ContraForce for your own organization or your customer organizations. 
 
-![ContraForce Multi-Tenancy Diagram](https://raw.githubusercontent.com/ContraForce/contraforce-api/main/Images/Multi-Tenancy%20Flow%20for%20Partners.drawio.svg)
+![ContraForce Multi-Tenancy Diagram](https://github.com/ContraForce/contraforce-api/blob/main/Images/Multi-Tenancy%20Flow%20for%20Partners.drawio.svg?raw=true)
 
 Based on the previous flow, if you are a ContraForce partner, you should be able to access all your data and your direct customers data using the ContraForce Partner API.
 That's why any request you send to the ContraForce Partner API, the **Tenant Id** is a mandatory parameter. 
