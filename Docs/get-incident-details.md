@@ -56,7 +56,7 @@ In case of something is not correct you will receive an object similar to the on
 
 | Property | Description | Sample Value |
 |--|--|--|
-| message | Description of the error and what went wrong | Next page token is invalid |
+| message | Description of the error and what went wrong |  |
 | isSuccess | false | false |
 
 ![](https://img.shields.io/badge/Response-401-red)
