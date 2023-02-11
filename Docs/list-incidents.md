@@ -93,7 +93,7 @@ The ***value*** property of the full response contains an object represents a pa
 | Property | Description | Sample Value |
 |--|--|--|
 | nextPageLink | Token that represents the next set of incidents to be retrieved (It can be send with the ***token*** parameter in another request) | FJOEOBrklwmc8cjowpxzlwqcoeaabkpelxn43DA... |
-| incidents | The array of the incidents retrieved | [ [Incident Object](#incident-object) ]
+| incidents | The array of the incidents retrieved | [ [Incident Object](https://github.com/ContraForce/contraforce-api/blob/main/Docs/incident-object.md) ]
 
 Following is a sample
 ``` JSON 
@@ -135,7 +135,7 @@ Following is a sample
 
 ### Sample response 
 
-To know more details about the Incident object please referee to [Incident Object](#incident-object)
+To know more details about the Incident object please referee to [Incident Object](https://github.com/ContraForce/contraforce-api/blob/main/Docs/incident-object.md)
 
 ``` JSON
 {
