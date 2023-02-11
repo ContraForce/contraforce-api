@@ -68,6 +68,7 @@ In case of something is not correct you will receive an object similar to the on
 In case of unauthenticated request, you will receive the status response **401**
 
 ![](https://img.shields.io/badge/Response-404-red)
+
 When providing an invalid ***tenantId*** or ***incidentId*** you will receive the status response **404**
 
 ### Sample response 
@@ -413,6 +414,6 @@ In the development environment you can use the demo enpoints so the parameters p
 > The demo request also requires an API Key, but any parameters passed will be ignored in the result, as you will always get the same result. 
 
 ``` HTTP
-GET /api/beta/partners/demo/incidents/[RANOM_ID]/entities?
+GET /api/beta/partners/demo/incidents/[RANOM_ID]/evidence?
 ```
 

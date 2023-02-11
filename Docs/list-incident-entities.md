@@ -43,7 +43,7 @@ GET /incidents/bf187080-88c6-4e5f-950b-5fdd12864727/entities?tenantId=a1d9fe42-9
 
 ![](https://img.shields.io/badge/Response-200-green)
 
-In case the request processed successfully, the response of the list incidents request represents an object that contains the following in a JSON format:
+In case the request processed successfully, the response of the list incident entities request represents an object that contains the following in a JSON format:
 
 | Property | Description | Sample Value |
 |--|--|--|
@@ -65,6 +65,7 @@ In case of something is not correct you will receive an object similar to the on
 In case of unauthenticated request, you will receive the status response **401**
 
 ![](https://img.shields.io/badge/Response-404-red)
+
 When providing an invalid ***tenantId*** or ***incidentId*** you will receive the status response **404**
 
 ### Sample response 

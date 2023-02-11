@@ -64,6 +64,7 @@ In case of something is not correct you will receive an object similar to the on
 In case of unauthenticated request, you will receive the status response **401**
 
 ![](https://img.shields.io/badge/Response-404-red)
+
 When providing an invalid ***tenantId*** or ***incidentId*** you will receive the status response **404**
 
 ### Sample response 
