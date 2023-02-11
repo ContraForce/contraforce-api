@@ -377,8 +377,34 @@ The JSON object has the following properties
 | columns | Array of string represetns the name of all the columns in the table in the right order | ["firstName", "entityName", "url", "lastModificationDate"] |
 | rows | Array of objects and each object represents an array of string that holds the value for each column | [ ["Test", "Account", "https://test.com", "2023-01-05"], ["Name 02", "Account", "https://test.com", "2023-01-05"] ]
 
-The following visualization makes it easier to under stand the properties better: 
+The following visualization makes it easier to understand the properties as it shows a table alongside the JSON representation of it: 
 
+![](https://github.com/ContraForce/contraforce-api/blob/main/Images/Incident%20Table%20of%20Evidence.svg)
+
+``` JSON
+{
+    "columns": [
+        "name",
+        "entityType",
+        "date",
+        "url"
+    ],
+    "rows": [
+        [
+            "Sharepoint",
+            "URL",
+            "2023-02-15",
+            "https://sample.com"
+        ],
+        [
+            "Azure User",
+            "Account",
+            "2023-02-15",
+            "https://sample.com"
+        ]
+    ]
+}
+```
 
 ## Demo Request and Response 
 ContraForce Parnter API allows you to test the call quickly using a demo endpoints. 
