@@ -7,38 +7,38 @@ This article will cover the definition of the incident object and each property 
 
 ``` JSON
 {
-        "id": "33360934-ffd3-2a6e-a513-ded250099e33",
-        "title": "File with Extension 'exe' Downloaded from SharePoint - Office 365",
-        "description": "test@example.com downloaded TFTP-Server-Installer (1).exe from https://test.com/sharepoint/demo-file.ext\r\n is recommended to use application control to prevent or block potentially malicious applications from running, limit file and directory permissions, use mitigation tools that detect and mitigate common features used in exploitation, and ensure users are able to spot phishing emails.\n\nFor more information on this particular technique, please visit the following MITRE article to learn more: https://attack.mitre.org/techniques/T1080/",
-        "number": 001,
-        "type": "Microsoft.SecurityInsights/Incidents",
-        "lastModificationTime": "2023-02-09T10:38:47.0111424Z",
-        "creationTime": "2023-02-09T10:38:47.0111424Z",
-        "lastActivityTime": "2023-02-09T09:31:22Z",
-        "severity": 4,
-        "classification": null,
-        "comment": null,
-        "classificationReason": null,
-        "classificationComment": null,
-        "tactics": [
-            "LateralMovement"
-        ],
-        "ruleIds": [
-            "/subscriptions/454dff-4455-41eb-4545454-85e97cacec70/resourceGroups/contraforce-rg/providers/Microsoft.OperationalInsights/workspaces/cf-loganalytics-ws/providers/Microsoft.SecurityInsights/alertRules/666851279-5f95-4f5b-8ffb-7ec11cb158e4"
-        ],
-        "alertProductNames": [
-            "Azure Sentinel"
-        ],
-        "user": {
-            "id": null,
-            "displayName": null,
-            "email": null
-        },
-        "isAssigned": true,
-        "productId": null,
-        "status": 2,
-        "alertsCount": 1
-    }
+    "id": "33360934-ffd3-2a6e-a513-ded250099e33",
+    "title": "File with Extension 'exe' Downloaded from SharePoint - Office 365",
+    "description": "test@example.com downloaded TFTP-Server-Installer (1).exe from https://test.com/sharepoint/demo-file.ext\r\n is recommended to use application control to prevent or block potentially malicious applications from running, limit file and directory permissions, use mitigation tools that detect and mitigate common features used in exploitation, and ensureusers are able to spot phishing emails.\n\nFor more information on this particular technique, please visit the following MITRE article to learn more: https://attack.mitre.org/techniques/T1080/",
+    "number": 001,
+    "type": "Microsoft.SecurityInsights/Incidents",
+    "lastModificationTime": "2023-02-09T10:38:47.0111424Z",
+    "creationTime": "2023-02-09T10:38:47.0111424Z",
+    "lastActivityTime": "2023-02-09T09:31:22Z",
+    "severity": 4,
+    "classification": null,
+    "comment": null,
+    "classificationReason": null,
+    "classificationComment": null,
+    "tactics": [
+        "LateralMovement"
+    ],
+    "ruleIds": [
+        "/subscriptions/454dff-4455-41eb-4545454-85e97cacec70/resourceGroups/contraforce-rg/providers/Microsoft.OperationalInsights/workspaces/cf-loganalytics-ws/providers/Microsoft.SecurityInsights/alertRules/666851279-5f95-4f5b-8ffb-7ec11cb158e4"
+    ],
+    "alertProductNames": [
+        "Azure Sentinel"
+    ],
+    "user": {
+        "id": null,
+        "displayName": null,
+        "email": null
+    },
+    "isAssigned": true,
+    "productId": null,
+    "status": 2,
+    "alertsCount": 1
+}
 ```
 
 Following table explains each property and the type of value it holds 
