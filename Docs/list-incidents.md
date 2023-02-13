@@ -21,7 +21,7 @@ This document covers the following topics:
 ## List Incidents Request
 To list all the incidents in your tenant or any of your managed customer's tenant
  
-![](https://img.shields.io/badge/HTTP-GET-green)
+![](https://img.shields.io/badge/HTTP-POST-blue)
 
 ``` HTTP
  POST 
@@ -250,6 +250,6 @@ In the development environment you can use the demo enpoints so the parameters p
 > The demo request also requires an API Key, but any parameters passed will be ignored in the result, as you will always get the same result. 
 
 ``` HTTP
-GET /api/beta/partners/demo/incidents?
+POST /api/beta/partners/demo/incidents?
 ```
 
