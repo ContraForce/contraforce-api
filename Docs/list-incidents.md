@@ -5,6 +5,8 @@ This document covers the following topics:
 - [List Incidents](#list-incidents)
   - [List Incidents Request](#list-incidents-request)
   - [Parameters](#parameters)
+  - [Request Body](#request-body)
+    - [Retrieve the latest incidents](#retrieve-the-latest-incidents)
     - [Retrieve latest 10 incidents in the last week](#retrieve-latest-10-incidents-in-the-last-week)
     - [Retrieve all the incidents of January 2023](#retrieve-all-the-incidents-of-january-2023)
   - [Response](#response)
@@ -22,38 +24,73 @@ To list all the incidents in your tenant or any of your managed customer's tenan
 ![](https://img.shields.io/badge/HTTP-GET-green)
 
 ``` HTTP
- GET 
+ POST 
  https://portal.contraforce.com/api/beta/partners/incidents?tenantId=[TARGET_TENANT_ID]
 ```
 Not all the incidents are being retrieved at once, when you send the request only top 50 incidents will be retrieved with a token that you can send in the parameters to retrieve the next chunk and so on. 
 
 ## Parameters 
-The list incidents *GET* accepts set of parameters for filtering, pagination, and or limiting the number of objects retrieved. 
+The list incidents *POST* accepts set of parameters for filtering, pagination, and or limiting the number of objects retrieved. 
 The following table shows all the parameters accepted by the endpoint with its default values: 
 
 |Parameter | Description | Usage | Default Value | Format | Required|
 |--|--|--|--|--|--|
 | tenantId | The tenant id of the your organization or any of your managed customer tenants | ?tenantId=a1d9fe42-913e-4204-af1b-31b9a76b4d73 | None | GUID | Yes |
-| take | Limits the number of incident objects retrieved at a time.  | ../incidents?take=10 | 50 | int (1, 2, ..1000) | No |
-| query | Search query to filter the incidents by various properties (number, title, description) | .../incidents?query=access fro | None | (string) text | No |
-| startDate | Define the oldest date of the incidents | /incidents?startDate=2023-02-1 | 24 Hours back | yyyy-MM-ddTHH:mm:ss.fffZ (2023-02-03T16:34:46.5737663Z) | No |
-| endDate| Define the newest (maximum) date of the incidents | /incidents?endDate=2023-02-10 | Current date/time | yyyy-MM-ddTHH:mm:ss.fffZ (2023-02-10T16:34:46.5737663Z) | No |
-| token | Define the token of the next page (the value retrieve in the response when the maximum limits of incidents reached, so you pass the token from the response to retrieve the next chunk of data for the same filter applied) | ../incidents?token=FDDdfa43yy4ejlkas5r43... | None | (string) text | No |
 
+## Request Body
+The request has to be in the JSON format and could contain none or any of the following properties to filters the incidents 
+
+| Property | Description | Usage | Default Value | Format | Required|
+|--|--|--|--|--|--|
+| take | Limits the number of incident objects retrieved at a time.  | "take": 10 | 50 | int (1, 2, ..1000) | No |
+| query | Search query to filter the incidents by various properties (number, title, description) | "query": "access fro" | None | (string) text | No |
+| startDate | Define the oldest date of the incidents | "startDate"="2023-02-1" | 24 Hours back | yyyy-MM-ddTHH:mm:ss.fffZ (2023-02-03T16:34:46.5737663Z) | No |
+| endDate| Define the newest (maximum) date of the incidents | "endDate"="2023-02-10" | Current date/time | yyyy-MM-ddTHH:mm:ss.fffZ (2023-02-10T16:34:46.5737663Z) | No |
+| pageToken | Define the token of the next page (the value retrieve in the response when the maximum limits of incidents reached, so you pass the token from the response to retrieve the next chunk of data for the same filter applied) | "pageToken"="FDDdfa43yy4ejlkas5r43..." | None | (string) text | No |
 
 Following shows sample requests with a combination of the mentioned parameters above: 
+### Retrieve the latest incidents
+``` HTTP
+POST /incidents?tenantId=a1d9fe42-913e-4204-af1b-31b9a76b4d73
+```
+And the body can be empty so no filters applied, you will get the latest 50 incidents as they are sorted in the Azure Sentinel
+
 ### Retrieve latest 10 incidents in the last week 
 ``` HTTP
-GET /incidents?tenantId=a1d9fe42-913e-4204-af1b-31b9a76b4d73&take=10&startDate=2023-02-03
+POST /incidents?tenantId=a1d9fe42-913e-4204-af1b-31b9a76b4d73
 ```
+And the body is the following JSON 
+``` JSON
+{
+    "take": 10,
+    "startDate": "2023-02-03"
+}
+```
+
 As of the date Feb 10th, 2023, the start date provided is 7 days back. 
 ### Retrieve all the incidents of January 2023 
 ``` HTTP
-GET /incidents?tenantId=a1d9fe42-913e-4204-af1b-31b9a76b4d73&take=10&startDate=2023-01-01&endDate=2023-01-31
+POST /incidents?tenantId=a1d9fe42-913e-4204-af1b-31b9a76b4d73
 ```
+And the body is the following JSON 
+``` JSON
+{
+    "startDate": "2023-01-01",
+    "endDate": "2023-01-31"
+}
+```
+
 If the number of incidents are more than 50 then a ***nextPageToken*** will be retrieved in the response and you can use it to retrieve the next page as shown 
 ``` HTTP
-GET /incidents?tenantId=a1d9fe42-913e-4204-af1b-31b9a76b4d73&take=10&startDate=2023-01-01&endDate=2023-01-31&token=AAAAABBBBCCCC...
+POST /incidents?tenantId=a1d9fe42-913e-4204-af1b-31b9a76b4d73&take=10&startDate=2023-01-01&endDate=2023-01-31&token=AAAAABBBBCCCC...
+```
+And the body is the following JSON 
+``` JSON
+{
+    "pageToken": "RGJLK546T54DFSGDJLG5T54.........",
+    "startDate": "2023-01-01",
+    "endDate": "2023-01-31"
+}
 ```
 ## Response 
 
