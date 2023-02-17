@@ -113,7 +113,8 @@ To know more details about the Incident object please refer to [Incident Object]
 
 ## Demo Request and Response 
 The ontraForce API allows you to test the call quickly using demo endpoints. 
-In the development environment you can use demo endpoints so the parameters passed won't be vaildated and you will be retrieving a valid response with sample data even if there is no data. This should make your development experience faster and smoother overall. 
+In the development environment you can use demo endpoints so the parameters passed won't be vaildated and you will be retrieving a valid response with sample data even if there is no data. This will allow testing at any time to make the development experience faster and smoother. 
+
 
 > The demo request also requires an API Key, but any parameters passed will be ignored in the result, as you will always get the same result. 
 

@@ -1,21 +1,21 @@
 # List Incident Entities
-List incident entities endpoint allows you retrieve list of all the associated entities involved with the targeted incident
+The ***List Incident Entities*** endpoint allows you retrieve a list of all the associated entities involved with a specified incident.
 
 This document covers the following topics:
 - [List Incident Entities](#list-incident-entities)
   - [List Incident Entities Request](#list-incident-entities-request)
   - [Parameters](#parameters)
   - [Response](#response)
-    - [Sample response](#sample-response)
+    - [Sample Response](#sample-response)
     - [Entity Object](#entity-object)
   - [Demo Request and Response](#demo-request-and-response)
 
 
-> List incident entities is authenticated and an API key is required to access the resources. 
+> The List Incident Entities is authenticated and an API key is required to access the resources. 
 > Check out the [Authentication section in the ContraForce API Overview](https://github.com/ContraForce/contraforce-api/tree/main/Docs#authentication-for-the-contraforce-partner-api) to learn more.
 
 ## List Incident Entities Request
-To list all the entities involved with a specific incident in your tenant or any of your managed customer's tenant
+To list all of the entities involved with a specific incident in your tenant or any of your managed customer's tenants:
  
 ![](https://img.shields.io/badge/HTTP-GET-green)
 
@@ -26,14 +26,14 @@ To list all the entities involved with a specific incident in your tenant or any
 
 
 ## Parameters 
-The List incident evidence *GET* accepts two parameters only, the Id of the incident and the target tenant id: 
+The List Incident evidence *GET* accepts two parameters only, the ID of the incident and the Target Tenant ID: 
 
 |Parameter | Description | Usage | Default Value | Format | Required|
 |--|--|--|--|--|--|
-| tenantId | The tenant id of the your organization or any of your managed customer tenants | ?tenantId=a1d9fe42-913e-4204-af1b-31b9a76b4d73 | None | GUID | Yes |
-| id | Id of the targeted incident  | ../incidents/10324234-324234-2323432/details | 5345345-5fsgf23-435faj-324gjkd | a1d9fe42-913e-4204-af1b-31b9a76b4d73 | Yes |
+| tenantId | The Tenant ID of your organization or any of your managed customer tenants | ?tenantId=a1d9fe42-913e-4204-af1b-31b9a76b4d73 | None | GUID | Yes |
+| id | ID of the targeted incident  | ../incidents/10324234-324234-2323432/details | 5345345-5fsgf23-435faj-324gjkd | a1d9fe42-913e-4204-af1b-31b9a76b4d73 | Yes |
 
-Following shows sample request
+The following shows a sample request:
 
 ``` HTTP
 GET /incidents/bf187080-88c6-4e5f-950b-5fdd12864727/entities?tenantId=a1d9fe42-913e-4204-af1b-31b9a76b4d73
@@ -43,7 +43,7 @@ GET /incidents/bf187080-88c6-4e5f-950b-5fdd12864727/entities?tenantId=a1d9fe42-9
 
 ![](https://img.shields.io/badge/Response-200-green)
 
-In case the request processed successfully, the response of the list incident entities request represents an object that contains the following in a JSON format:
+When the request is processed successfully, the response of the List Incident Entities request represents an object that contains the following in a JSON format:
 
 | Property | Description | Sample Value |
 |--|--|--|
@@ -53,7 +53,7 @@ In case the request processed successfully, the response of the list incident en
 
 ![](https://img.shields.io/badge/Response-400-red)
 
-In case of something is not correct you will receive an object similar to the one above but without the ***value*** and in this case you can look at the ***message*** property to know more about the error.   
+In case something is not correct you will receive an object similar to the one above but without the ***value*** and in this case you can look at the ***message*** property to know more about the error.   
 
 | Property | Description | Sample Value |
 |--|--|--|
@@ -148,8 +148,8 @@ In ContraFoce, entity kind supports the following values:
 The ***id*** and ***friendlyName*** are not nullable properties and will always have values for each entity type
 
 ## Demo Request and Response 
-ContraForce Parnter API allows you to test the call quickly using a demo endpoints. 
-In the development environment you can use the demo enpoints so the parameters passed won't be vaildated and you will be retrieving a valid response with sample data everytime even if there was no data for the time period or the passed query, that makes your development experience faster and smoother. 
+The ContraForce API allows you to test the call quickly using demo endpoints. 
+In the development environment you can use demo enpoints so that the parameters passed won't be vaildated and you will be retrieving a valid response with sample data even if there is no data for that time. This will allow testing at any time to make the development experience faster and smoother. 
 
 > The demo request also requires an API Key, but any parameters passed will be ignored in the result, as you will always get the same result. 
 
