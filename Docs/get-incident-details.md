@@ -1,5 +1,5 @@
 # Get Incident Details 
-Get incident details endpoint allows you to retrieve full details of the incident, as the list incidents endpoint will retrieve only the main keys in the incident object, this endpoint will retrieve the full details needed
+The ContraForce API ***Get Incident Details*** endpoint allows you to retrieve full details of an incident, as the list incidents endpoint will retrieve only the main keys in the incident object, this endpoint will retrieve the full details needed
 
 This document covers the following topics:
 - [Get Incident Details](#get-incident-details)
@@ -14,7 +14,7 @@ This document covers the following topics:
 > Check out the [Authentication section in the ContraForce API Overview](https://github.com/ContraForce/contraforce-api/tree/main/Docs#authentication-for-the-contraforce-partner-api) to learn more.
 
 ## Get Incident Details Request
-To list all the incidents in your tenant or any of your managed customer's tenant
+To list all the incidents in your tenant or any of your managed customer's tenants
  
 ![](https://img.shields.io/badge/HTTP-GET-green)
 
@@ -25,14 +25,14 @@ To list all the incidents in your tenant or any of your managed customer's tenan
 
 
 ## Parameters 
-The Get incident details *GET* accepts two parameters only, the Id of the incident and the target tenant id: 
+The Get incident details *GET* accepts two parameters only, the ID of the incident and the target tenant id: 
 
 |Parameter | Description | Usage | Default Value | Format | Required|
 |--|--|--|--|--|--|
 | tenantId | The tenant id of the your organization or any of your managed customer tenants | ?tenantId=a1d9fe42-913e-4204-af1b-31b9a76b4d73 | None | GUID | Yes |
-| id | Id of the targeted incident  | ../incidents/10324234-324234-2323432/details | 5345345-5fsgf23-435faj-324gjkd | a1d9fe42-913e-4204-af1b-31b9a76b4d73 | Yes |
+| id | ID of the targeted incident  | ../incidents/10324234-324234-2323432/details | 5345345-5fsgf23-435faj-324gjkd | a1d9fe42-913e-4204-af1b-31b9a76b4d73 | Yes |
 
-Following shows sample request
+The following shows a sample request:
 
 ``` HTTP
 GET /incidents/bf187080-88c6-4e5f-950b-5fdd12864727/details?tenantId=a1d9fe42-913e-4204-af1b-31b9a76b4d73
@@ -42,7 +42,7 @@ GET /incidents/bf187080-88c6-4e5f-950b-5fdd12864727/details?tenantId=a1d9fe42-91
 
 ![](https://img.shields.io/badge/Response-200-green)
 
-In case the request processed successfully, the response of the list incidents request represents an object that contains the following in a JSON format:
+When the request is processed successfully, the response of the ***List Incidents Request*** represents an object that contains the following in JSON format:
 
 | Property | Description | Sample Value |
 |--|--|--|
@@ -52,7 +52,7 @@ In case the request processed successfully, the response of the list incidents r
 
 ![](https://img.shields.io/badge/Response-400-red)
 
-In case of something is not correct you will receive an object similar to the one above but without the ***value*** and in this case you can look at the ***message*** property to know more about the error.   
+If there is an error you will receive an object similar to the one shown above but without the ***value*** and in this case you can look at the ***message*** property to know more about the error.   
 
 | Property | Description | Sample Value |
 |--|--|--|
@@ -69,7 +69,7 @@ When providing an invalid ***tenantId*** or ***incidentId*** you will receive th
 
 ### Sample response 
 
-To know more details about the Incident object please referee to [Incident Object](https://github.com/ContraForce/contraforce-api/blob/main/Docs/incident-object.md)
+To know more details about the Incident object please refer to [Incident Object](https://github.com/ContraForce/contraforce-api/blob/main/Docs/incident-object.md)
 
 ``` JSON
 {
@@ -112,8 +112,8 @@ To know more details about the Incident object please referee to [Incident Objec
 ```
 
 ## Demo Request and Response 
-ContraForce Parnter API allows you to test the call quickly using a demo endpoints. 
-In the development environment you can use the demo enpoints so the parameters passed won't be vaildated and you will be retrieving a valid response with sample data everytime even if there was no data for the time period or the passed query, that makes your development experience faster and smoother. 
+The ontraForce API allows you to test the call quickly using demo endpoints. 
+In the development environment you can use demo endpoints so the parameters passed won't be vaildated and you will be retrieving a valid response with sample data even if there is no data. This should make your development experience faster and smoother overall. 
 
 > The demo request also requires an API Key, but any parameters passed will be ignored in the result, as you will always get the same result. 
 
