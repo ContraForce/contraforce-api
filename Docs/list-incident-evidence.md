@@ -1,8 +1,8 @@
 # List Incident Evidence
-List incident evidence endpoint allows you retrieve a table of all the evidence assocaited with an incident 
+The List Incident Evidence endpoint allows you retrieve a table of all the evidence assocaited with an incident. 
 
 **Please Note**
-> Not all the incident have an evidence table, so some requests will retrieve nothing
+> Not all incidents have an evidence table, so some requests will not retrieve data.
 
 This document covers the following topics:
 - [List Incident Evidence](#list-incident-evidence)
@@ -14,11 +14,11 @@ This document covers the following topics:
   - [Demo Request and Response](#demo-request-and-response)
 
 
-> List incident evidence is authenticated and an API key is required to access the resources. 
+> The List Incident Evidence endpoint is authenticated and an API key is required to access the resources. 
 > Check out the [Authentication section in the ContraForce API Overview](https://github.com/ContraForce/contraforce-api/tree/main/Docs#authentication-for-the-contraforce-partner-api) to learn more.
 
 ## List Incident Evidence Request
-To list all the entities involved with a specific incident in your tenant or any of your managed customer's tenant
+To list all the entities involved with a specific incident in your tenant or any of your managed customer's tenants:
  
 ![](https://img.shields.io/badge/HTTP-GET-green)
 
@@ -29,14 +29,14 @@ To list all the entities involved with a specific incident in your tenant or any
 
 
 ## Parameters 
-The List incident evidence *GET* accepts two parameters only, the Id of the incident and the target tenant id: 
+The List Incident Evidence *GET* accepts two parameters only, the ID of the incident and the target Tenant ID: 
 
 |Parameter | Description | Usage | Default Value | Format | Required|
 |--|--|--|--|--|--|
-| tenantId | The tenant id of the your organization or any of your managed customer tenants | ?tenantId=a1d9fe42-913e-4204-af1b-31b9a76b4d73 | None | GUID | Yes |
-| id | Id of the targeted incident  | ../incidents/10324234-324234-2323432/details | 5345345-5fsgf23-435faj-324gjkd | a1d9fe42-913e-4204-af1b-31b9a76b4d73 | Yes |
+| tenantId | The Tenant ID of your organization or any of your managed customer tenants | ?tenantId=a1d9fe42-913e-4204-af1b-31b9a76b4d73 | None | GUID | Yes |
+| id | ID of the targeted incident  | ../incidents/10324234-324234-2323432/details | 5345345-5fsgf23-435faj-324gjkd | a1d9fe42-913e-4204-af1b-31b9a76b4d73 | Yes |
 
-Following shows sample request
+The following shows sample request:
 
 ``` HTTP
 GET /incidents/bf187080-88c6-4e5f-950b-5fdd12864727/entities?tenantId=a1d9fe42-913e-4204-af1b-31b9a76b4d73
@@ -46,7 +46,7 @@ GET /incidents/bf187080-88c6-4e5f-950b-5fdd12864727/entities?tenantId=a1d9fe42-9
 
 ![](https://img.shields.io/badge/Response-200-green)
 
-In case the request processed successfully, the response of the list incident evidence request represents an object that contains the following in a JSON format:
+When the request is processed successfully, the response of the list incident evidence request represents an object that contains the following in a JSON format:
 
 | Property | Description | Sample Value |
 |--|--|--|
@@ -56,7 +56,7 @@ In case the request processed successfully, the response of the list incident ev
 
 ![](https://img.shields.io/badge/Response-400-red)
 
-In case of something is not correct you will receive an object similar to the one above but without the ***value*** and in this case you can look at the ***message*** property to know more about the error.   
+When something is not correct, you will receive an object similar to the one above but without the ***value*** and in this case you can look at the ***message*** property to know more about the error.   
 
 | Property | Description | Sample Value |
 |--|--|--|
@@ -65,11 +65,11 @@ In case of something is not correct you will receive an object similar to the on
 
 ![](https://img.shields.io/badge/Response-401-red)
 
-In case of unauthenticated request, you will receive the status response **401**
+In case of unauthenticated request, you will receive the status response **401**.
 
 ![](https://img.shields.io/badge/Response-404-red)
 
-When providing an invalid ***tenantId*** or ***incidentId*** you will receive the status response **404**
+When providing an invalid ***tenantId*** or ***incidentId*** you will receive the status response **404**.
 
 ### Sample response 
 
@@ -365,17 +365,17 @@ When providing an invalid ***tenantId*** or ***incidentId*** you will receive th
 ```
 
 ### Evidence Table Object
-Evidence table object is a JSON object that represents a table consists of a set of columns and rows.
+The Evidence Table object is a JSON object that represents a table and consists of a set of columns and rows.
 
 **Please Note**
-> Each incident has a different evidence and different data structure, so the columns (names, types, and count) won't have a specific structure.
-> You can render this table in your project so it will be better viewable. 
+> Each incident has a different evidence and data structure, so the columns (names, types, and count) won't have a specific structure.
+> You can render this table in your project so it is easier to view. 
 
-The JSON object has the following properties
+The JSON object has the following properties:
 
 | Property | Description | Sample Value | 
 |--|--|--|
-| columns | Array of string represetns the name of all the columns in the table in the right order | ["firstName", "entityName", "url", "lastModificationDate"] |
+| columns | Array of string represents the name of all the columns in the table in the right order | ["firstName", "entityName", "url", "lastModificationDate"] |
 | rows | Array of objects and each object represents an array of string that holds the value for each column | [ ["Test", "Account", "https://test.com", "2023-01-05"], ["Name 02", "Account", "https://test.com", "2023-01-05"] ]
 
 The following visualization makes it easier to understand the properties as it shows a table alongside the JSON representation of it: 
@@ -408,10 +408,10 @@ The following visualization makes it easier to understand the properties as it s
 ```
 
 ## Demo Request and Response 
-ContraForce Parnter API allows you to test the call quickly using a demo endpoints. 
-In the development environment you can use the demo enpoints so the parameters passed won't be vaildated and you will be retrieving a valid response with sample data everytime even if there was no data for the time period or the passed query, that makes your development experience faster and smoother. 
+The ContraForce API allows you to test the call quickly using demo endpoints. 
+In the development environment you can use demo enpoints so that the parameters passed won't be vaildated and you will be retrieving a valid response with sample data even if there is no data for that time. This will allow testing at any time to make the development experience faster and smoother. 
 
-> The demo request also requires an API Key, but any parameters passed will be ignored in the result, as you will always get the same result. 
+> The demo request also requires an API Key, but any parameters passed will be ignored in the result, so you will always get the same result. 
 
 ``` HTTP
 GET /api/beta/partners/demo/incidents/[RANOM_ID]/evidence?

@@ -1,5 +1,5 @@
 # List Incidents 
-List incidents endpoint allows you to retrieve list of the incidents in your tenant or any of your managed customer tenants.
+The List Incidents endpoint allows you to retrieve a list of the incidents in your tenant or from any of your managed customer tenants.
 
 This document covers the following topics:
 - [List Incidents](#list-incidents)
@@ -15,11 +15,11 @@ This document covers the following topics:
   - [Demo Request and Response](#demo-request-and-response)
 
 
-> List incidents endpoint is authenticated and an API key is required to access the resources. 
+> The List Incidents Endpoint is authenticated with an API key which is required to access resources. 
 > Check out the [Authentication section in the ContraForce API Overview](https://github.com/ContraForce/contraforce-api/tree/main/Docs#authentication-for-the-contraforce-partner-api) to learn more.
 
 ## List Incidents Request
-To list all the incidents in your tenant or any of your managed customer's tenant
+To list all the incidents in your tenant or any of your managed customers tenants:
  
 ![](https://img.shields.io/badge/HTTP-POST-blue)
 
@@ -27,18 +27,18 @@ To list all the incidents in your tenant or any of your managed customer's tenan
  POST 
  https://portal.contraforce.com/api/beta/partners/incidents?tenantId=[TARGET_TENANT_ID]
 ```
-Not all the incidents are being retrieved at once, when you send the request only top 50 incidents will be retrieved with a token that you can send in the parameters to retrieve the next chunk and so on. 
+Not all the incidents are retrieved with a single request. When you send the request only the top 50 incidents will be retrieved. A token can be re-generated and used to ingest the next 50 incidents after the initial request.
 
 ## Parameters 
-The list incidents *POST* accepts set of parameters for filtering, pagination, and or limiting the number of objects retrieved. 
+The ***List Incidents*** *POST* accepts a set of parameters for filtering, pagination, and/or limiting the number of objects retrieved. 
 The following table shows all the parameters accepted by the endpoint with its default values: 
 
 |Parameter | Description | Usage | Default Value | Format | Required|
 |--|--|--|--|--|--|
-| tenantId | The tenant id of the your organization or any of your managed customer tenants | ?tenantId=a1d9fe42-913e-4204-af1b-31b9a76b4d73 | None | GUID | Yes |
+| tenantId | The Tenant ID of the your organization or any of your managed customer tenants | ?tenantId=a1d9fe42-913e-4204-af1b-31b9a76b4d73 | None | GUID | Yes |
 
 ## Request Body
-The request has to be in the JSON format and could contain none or any of the following properties to filters the incidents 
+The request has to be in JSON format and could contain none or any of the following properties to filters the incidents 
 
 | Property | Description | Usage | Default Value | Format | Required|
 |--|--|--|--|--|--|
