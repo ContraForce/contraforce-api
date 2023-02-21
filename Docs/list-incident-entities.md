@@ -15,7 +15,7 @@ This document covers the following topics:
 > Check out the [Authentication section in the ContraForce API Overview](https://github.com/ContraForce/contraforce-api/tree/main/Docs#authentication-for-the-contraforce-partner-api) to learn more.
 
 ## List Incident Entities Request
-To list all of the entities involved with a specific incident in your tenant or any of your managed customer's tenants:
+To list all of the entities involved with a specific incident in your tenant or any of your managed customer's tenants use the following:
  
 ![](https://img.shields.io/badge/HTTP-GET-green)
 
@@ -47,13 +47,13 @@ When the request is processed successfully, the response of the List Incident En
 
 | Property | Description | Sample Value |
 |--|--|--|
-| value | Object represents an array of entity objects | [Entity Object](#entity-object) | 
+| value | Object represents an array of incident entity objects | [Entity Object](#entity-object) | 
 | message | The status of the request or the error message in case of request failure | Incidents have been retrieved successfully! |
 | isSuccess | It has the value of true | true |
 
 ![](https://img.shields.io/badge/Response-400-red)
 
-In case something is not correct you will receive an object similar to the one above but without the ***value*** and in this case you can look at the ***message*** property to know more about the error.   
+In case something is not correct, you will receive an object similar to the one above but without the ***value*** and in this case you can look at the ***message*** property to know more about the error.   
 
 | Property | Description | Sample Value |
 |--|--|--|
@@ -70,7 +70,7 @@ When providing an invalid ***tenantId*** or ***incidentId*** you will receive th
 
 ### Sample response 
 
-To know more details about the Incident object please referee to [Incident Object](https://github.com/ContraForce/contraforce-api/blob/main/Docs/incident-object.md)
+To see additional details about the Incident object please referee to [Incident Object](https://github.com/ContraForce/contraforce-api/blob/main/Docs/incident-object.md)
 
 ``` JSON
 {
@@ -121,7 +121,7 @@ To know more details about the Incident object please referee to [Incident Objec
 ```
 
 ### Entity Object
-Each entity in the retrieved array of entities represents a JSON object that wraps all the metadata about an entity. 
+Each entity in the array of retreived entities represents a JSON object that includes all the available metadata about an entity. 
 
 > Entity has a kind property and based on that kind property some properties will be null and other will be filled for example, the property ***UserUpn*** will be populated only if the entity kind is ***Account***
 
@@ -145,7 +145,7 @@ In ContraFoce, entity kind supports the following values:
 - SubmissionMail
 - SentitelEntities
 
-The ***id*** and ***friendlyName*** are not nullable properties and will always have values for each entity type
+The ***id*** and ***friendlyName*** are not nullable properties and will always have values for each entity type.
 
 ## Demo Request and Response 
 The ContraForce API allows you to test the call quickly using demo endpoints. 

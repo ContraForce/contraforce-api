@@ -9,7 +9,7 @@ This document covers the following topics:
   - [List Incident Evidence Request](#list-incident-evidence-request)
   - [Parameters](#parameters)
   - [Response](#response)
-    - [Sample response](#sample-response)
+    - [Sample Response](#sample-response)
     - [Evidence Table Object](#evidence-table-object)
   - [Demo Request and Response](#demo-request-and-response)
 
@@ -18,7 +18,7 @@ This document covers the following topics:
 > Check out the [Authentication section in the ContraForce API Overview](https://github.com/ContraForce/contraforce-api/tree/main/Docs#authentication-for-the-contraforce-partner-api) to learn more.
 
 ## List Incident Evidence Request
-To list all the entities involved with a specific incident in your tenant or any of your managed customer's tenants:
+To list all the evidence involved with a specific incident in your tenant or any of your managed customer's tenants use the command below:
  
 ![](https://img.shields.io/badge/HTTP-GET-green)
 
@@ -36,7 +36,7 @@ The List Incident Evidence *GET* accepts two parameters only, the ID of the inci
 | tenantId | The Tenant ID of your organization or any of your managed customer tenants | ?tenantId=a1d9fe42-913e-4204-af1b-31b9a76b4d73 | None | GUID | Yes |
 | id | ID of the targeted incident  | ../incidents/10324234-324234-2323432/details | 5345345-5fsgf23-435faj-324gjkd | a1d9fe42-913e-4204-af1b-31b9a76b4d73 | Yes |
 
-The following shows sample request:
+The following shows a sample request:
 
 ``` HTTP
 GET /incidents/bf187080-88c6-4e5f-950b-5fdd12864727/entities?tenantId=a1d9fe42-913e-4204-af1b-31b9a76b4d73
@@ -46,7 +46,7 @@ GET /incidents/bf187080-88c6-4e5f-950b-5fdd12864727/entities?tenantId=a1d9fe42-9
 
 ![](https://img.shields.io/badge/Response-200-green)
 
-When the request is processed successfully, the response of the list incident evidence request represents an object that contains the following in a JSON format:
+When the request is processed successfully, the response of the List Incident Evidence request represents an object that contains the following in a JSON format:
 
 | Property | Description | Sample Value |
 |--|--|--|

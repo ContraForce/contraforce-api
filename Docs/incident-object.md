@@ -1,7 +1,7 @@
 # Overview 
-Incidents are the core object in the world of cybersecurity, and all the exposed endpoints in the ContraForce API are related to retrieving incidents or the associated data (entities, evidence and more).
+Incidents are the core object in the world of cybersecurity, and all the exposed endpoints in the ContraForce API are related to retrieving incidents or the data associated with an incident (entities, evidence, etc.).
 
-This article will cover the definition of the ***Incident*** object and each of the included properties:
+The documentation below covers the definition of the ***Incident*** object and each of the included properties:
 
 # Incident object sample 
 
@@ -41,7 +41,7 @@ This article will cover the definition of the ***Incident*** object and each of 
 }
 ```
 
-Following table explains each property and the type of value it holds 
+The following table explains each property and the value it represents. 
 
 | Property | Type | Description | Sample Value | Is Nullable | 
 |--|--|--|--|--|

@@ -1,6 +1,6 @@
 # Overview
 The ContraForce API provides you access to ContraForce Portal data using various exposed API endpoints. 
-The Incidents API allows you to achieve the following: 
+The ContraForce API allows the use the following requests: 
   - [List Incidents Request](https://github.com/ContraForce/contraforce-api/blob/main/Docs/list-incidents.md)
   - [Get Incident Details Request](https://github.com/ContraForce/contraforce-api/blob/main/Docs/get-incident-details.md)
   - [List Incident Entities Request](https://github.com/ContraForce/contraforce-api/blob/main/Docs/list-incident-entities.md)
@@ -19,11 +19,11 @@ This ReadMe document covers the following topics:
 	- [ContraForce API Endpoints](#contraforce-partner-api-endpoints)
 
 ## Multi-Tenancy in ContraForce
-Through the ContraForce Partner Program, partners can create ContraForce environments for their customers and then manage their incidents and connected data sources within ContraForce web application. The ContraForce API allows users to retrieve portal data via API calls in addition to web application user interface.
+Through the ContraForce Partner Program, partners can create ContraForce environments for their customers and then manage their incidents and connected data sources within the ContraForce web application. The ContraForce API allows users to retrieve portal data via API calls in addition to web application user interface.
 
 ![ContraForce Multi-Tenancy Diagram](https://github.com/ContraForce/contraforce-api/blob/main/Images/Multi-Tenancy%20Flow%20for%20Partners.drawio.svg?raw=true)
 
-ContraForce environments are created per customer. Because of this, a **Tenant ID** is a mandatory parameter for any ContraForce API request. By sepcifying the Tenant ID in the request body, partners are enabled to access data from any of the customer ContraForce environments under their management.
+ContraForce environments are created per customer. Because of this, a **Tenant ID** is a mandatory parameter for any ContraForce API request. By sepcifying the Tenant ID in the request body, partners are enabled to access data for any of the customer ContraForce environments under their management.
 
 ## Authentication for the ContraForce API
 In the current version of the ContraForce API, the exposed endpoints of the API are secured using an ***API Key***. An API key can be requested after Partner Onboarding has been completed. A member of the ContraForce Engineering team will provide you with an API key and assist you with the connection process.
@@ -59,5 +59,9 @@ After you submit the test request, a sucess response should appear as shown belo
 ```
 
 ## ContraForce API Endpoints
-Following links provide a detailed documentation about each available endpoint in the current beta version of the ContraForce API
+The following links provide a detailed documentation about each available endpoint in the current beta version of the ContraForce API:
+ - [List Incidents Request](https://github.com/ContraForce/contraforce-api/blob/main/Docs/list-incidents.md)
+  - [Get Incident Details Request](https://github.com/ContraForce/contraforce-api/blob/main/Docs/get-incident-details.md)
+  - [List Incident Entities Request](https://github.com/ContraForce/contraforce-api/blob/main/Docs/list-incident-entities.md)
+  - [List Incident Evidence Request](https://github.com/ContraForce/contraforce-api/blob/main/Docs/list-incident-evidence.md)
 

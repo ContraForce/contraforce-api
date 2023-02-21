@@ -1,20 +1,20 @@
 # Get Incident Details 
-The ContraForce API ***Get Incident Details*** endpoint allows you to retrieve full details of an incident, as the list incidents endpoint will retrieve only the main keys in the incident object, this endpoint will retrieve the full details needed
+The ContraForce API ***Get Incident Details*** endpoint allows you to retrieve the full details of an incident generated in ContraForce. The List Incidents endpoint differs as that endpoint will only retrieve the main keys of an Incident. The Get Incident Details endpoint is the better option if all incident details are needed.
 
 This document covers the following topics:
 - [Get Incident Details](#get-incident-details)
   - [Get Incident Details Request](#get-incident-details-request)
   - [Parameters](#parameters)
   - [Response](#response)
-    - [Sample response](#sample-response)
+    - [Sample Response](#sample-response)
   - [Demo Request and Response](#demo-request-and-response)
 
 
-> Get incident details is authenticated and an API key is required to access the resources. 
+> Get Incident Details is authenticated and an API key is required to access the resources. 
 > Check out the [Authentication section in the ContraForce API Overview](https://github.com/ContraForce/contraforce-api/tree/main/Docs#authentication-for-the-contraforce-partner-api) to learn more.
 
 ## Get Incident Details Request
-To list all the incidents in your tenant or any of your managed customer's tenants
+To list all the incidents in your tenant or any of your managed customer's tenants use the following GET command:
  
 ![](https://img.shields.io/badge/HTTP-GET-green)
 
@@ -30,7 +30,7 @@ The Get incident details *GET* accepts two parameters only, the ID of the incide
 |Parameter | Description | Usage | Default Value | Format | Required|
 |--|--|--|--|--|--|
 | tenantId | The tenant id of the your organization or any of your managed customer tenants | ?tenantId=a1d9fe42-913e-4204-af1b-31b9a76b4d73 | None | GUID | Yes |
-| id | ID of the targeted incident  | ../incidents/10324234-324234-2323432/details | 5345345-5fsgf23-435faj-324gjkd | a1d9fe42-913e-4204-af1b-31b9a76b4d73 | Yes |
+| ssid | ID of the targeted incident  | ../incidents/10324234-324234-2323432/details | 5345345-5fsgf23-435faj-324gjkd | a1d9fe42-913e-4204-af1b-31b9a76b4d73 | Yes |
 
 The following shows a sample request:
 
@@ -46,7 +46,7 @@ When the request is processed successfully, the response of the ***List Incident
 
 | Property | Description | Sample Value |
 |--|--|--|
-| value | Object represents a a full detailed incident object | [Incidents List Object](https://github.com/ContraForce/contraforce-api/blob/main/Docs/incident-object.md) | 
+| value | Object represents all details of an incident object | [Incidents List Object](https://github.com/ContraForce/contraforce-api/blob/main/Docs/incident-object.md) | 
 | message | The status of the request or the error message in case of request failure | Incidents have been retrieved successfully! |
 | isSuccess | It has the value of true | true |
 
@@ -112,13 +112,13 @@ To know more details about the Incident object please refer to [Incident Object]
 ```
 
 ## Demo Request and Response 
-The ontraForce API allows you to test the call quickly using demo endpoints. 
-In the development environment you can use demo endpoints so the parameters passed won't be vaildated and you will be retrieving a valid response with sample data even if there is no data. This will allow testing at any time to make the development experience faster and smoother. 
+The ContraForce API allows you to test the call quickly using demo endpoints. 
+In the development environment you can use demo endpoints so the parameters passed won't be vaildated and you will be retrieving a valid response with sample data even if there is no data. This will allow testing at any time making the development experience faster and smoother. 
 
 
 > The demo request also requires an API Key, but any parameters passed will be ignored in the result, as you will always get the same result. 
 
 ``` HTTP
-GET /api/beta/partners/demo/incidents/[RANOM_ID]/details?
+GET /api/beta/partners/demo/incidents/[RANDOM_ID]/details?
 ```
 
