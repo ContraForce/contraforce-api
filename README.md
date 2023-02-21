@@ -3,7 +3,7 @@ The ContraForce platform condenses your existing Microsoft security stack into a
 
 ![Gamebooks Page](https://uploads-ssl.webflow.com/6290f98c568302d7a3f2442c/630fdddd7f07352ccfcd7635_Frame%2060977-p-1080.png)
 
-# ContraForce Partner API Documentation 
+# ContraForce API Documentation 
 Following are the references for the ContraForce Parnter API docs and each request explination: 
 - [ContraForce Partner API](https://github.com/ContraForce/contraforce-api/tree/main/Docs)
   - [Incident Object](https://github.com/ContraForce/contraforce-api/blob/main/Docs/incident-object.md)
