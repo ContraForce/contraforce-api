@@ -38,15 +38,15 @@ The following table shows all the parameters accepted by the endpoint with its d
 | tenantId | The tenant id of the your organization or any of your managed customer tenants | ?tenantId=a1d9fe42-913e-4204-af1b-31b9a76b4d73 | None | GUID | Yes |
 
 ## Request Body
-The request has to be in the JSON format and could contain none or any of the following properties to filters the incidents 
+The request has to be in the JSON format and could contain none or any of the following properties in the JSON object to filter the requested incidents 
 
 | Property | Description | Usage | Default Value | Format | Required|
 |--|--|--|--|--|--|
-| take | Limits the number of incident objects retrieved at a time.  | "take": 10 | 50 | int (1, 2, ..1000) | No |
-| query | Search query to filter the incidents by various properties (number, title, description) | "query": "access fro" | None | (string) text | No |
-| startDate | Define the oldest date of the incidents | "startDate"="2023-02-1" | 24 Hours back | yyyy-MM-ddTHH:mm:ss.fffZ (2023-02-03T16:34:46.5737663Z) | No |
+| take | Define the number of the incidents to be retrieved in the response at a time (Maximum 100)  | "take": 10 | 50 | int (1, 2, ..1000) | No |
+| query | Search query to filter the incidents by various properties (number, title, description) | "query": "access from" | None | (string) text | No |
+| startDate | Define the oldest (Minimum) date of the incidents | "startDate"="2023-02-1" | 24 Hours back | yyyy-MM-ddTHH:mm:ss.fffZ (2023-02-03T16:34:46.5737663Z) | No |
 | endDate| Define the newest (maximum) date of the incidents | "endDate"="2023-02-10" | Current date/time | yyyy-MM-ddTHH:mm:ss.fffZ (2023-02-10T16:34:46.5737663Z) | No |
-| pageToken | Define the token of the next page (the value retrieve in the response when the maximum limits of incidents reached, so you pass the token from the response to retrieve the next chunk of data for the same filter applied) | "pageToken"="FDDdfa43yy4ejlkas5r43..." | None | (string) text | No |
+| pageToken | Define the token of the next page (the value retrieved in the response when there is still incidents not retreived due to the maximum limits reached of the retreived incidents (100 incidents retrieved and 900 remaining), so you can pass the token received in the response to retrieve the next chunk of incidents for the same filter applied) | "pageToken"="FDDdfa43yy4ejlkas5r43..." | None | (string) text | No |
 
 Following shows sample requests with a combination of the mentioned parameters above: 
 ### Retrieve the latest incidents
