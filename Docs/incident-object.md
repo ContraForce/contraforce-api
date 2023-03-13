@@ -1,7 +1,7 @@
 # Overview 
-Incidents is the core object in the world of cybersecurity, and all the exposes endpoints in the ContraForce Partner API are related to retrieving incidents or their associated data (entities, evidence and more)
+Incidents are the core object in the world of cybersecurity, and all the exposed endpoints in the ContraForce API are related to retrieving incidents or the data associated with an incident (entities, evidence, etc.).
 
-This article will cover the definition of the incident object and each property inside:
+The documentation below covers the definition of the ***Incident*** object and each of the included properties:
 
 # Incident object sample 
 
@@ -41,13 +41,13 @@ This article will cover the definition of the incident object and each property 
 }
 ```
 
-Following table explains each property and the type of value it holds 
+The following table explains each property and the value it represents. 
 
 | Property | Type | Description | Sample Value | Is Nullable | 
 |--|--|--|--|--|
-| id | (string) - GUID | Id of the incident | 33360934-ffd3-2a6e-a513-ded250099e33 | No |
+| id | (string) - GUID | ID of the incident | 33360934-ffd3-2a6e-a513-ded250099e33 | No |
 | title | (string) - text | Title of the incident | New authentication attempt for the user sample@user.com from a new geo-location | No |
-| description | (string) - text | Further details about the incident and explination | User with the email ... is trying to authentication from a new location muliple times ... | Yes |
+| description | (string) - text | Further details about the incident and explination | User with the email sample@user.com has tried to authenticate from a new location muliple times ... | Yes |
 | number | (int) - number | Reference number of the incident | 351 | No |
 | type | (string) - text | The source of the incident | Microsoft.SecurityInsights/Incidents | Yes |
 | lastModificationTime | date/time (UTC) | Date/Time of the last update happened to the incident | 2023-02-09T10:38:47.0111424Z | No | 
@@ -66,4 +66,4 @@ Following table explains each property and the type of value it holds
 | status | (int) - number - Enum | Status of the incident and it has the following values (Active = 1, New = 2, Closed = 3) | 534543545-234234-45435-23423  | Yes |
 | alertsCount | (int) - number | Number of alerts | 3  | Yes |
 
-**For futher explination and question please feel free to reach out to the ContraForce team**
+**For futher explination and question please feel free to reach out to the ContraForce Enginnering team.**

@@ -1,25 +1,25 @@
 # List Incidents 
-List incidents endpoint allows you to retrieve list of the incidents in your tenant or any of your managed customer tenants.
+The List Incidents endpoint allows you to retrieve a list of the incidents in your tenant or from any of your managed customer tenants.
 
 This document covers the following topics:
 - [List Incidents](#list-incidents)
   - [List Incidents Request](#list-incidents-request)
   - [Parameters](#parameters)
   - [Request Body](#request-body)
-    - [Retrieve the latest incidents](#retrieve-the-latest-incidents)
-    - [Retrieve latest 10 incidents in the last week](#retrieve-latest-10-incidents-in-the-last-week)
-    - [Retrieve all the incidents of January 2023](#retrieve-all-the-incidents-of-january-2023)
+    - [Retrieve the latest Incidents](#retrieve-the-latest-incidents)
+    - [Retrieve the most recent 10 incidents from the last 7 days](#retrieve-latest-10-incidents-in-the-last-week)
+    - [Retrieve all incidents for a month](#retrieve-all-the-incidents-of-january-2023)
   - [Response](#response)
     - [Incidents List Object](#incidents-list-object)
-    - [Sample response](#sample-response)
+    - [Sample Response](#sample-response)
   - [Demo Request and Response](#demo-request-and-response)
 
 
-> List incidents endpoint is authenticated and an API key is required to access the resources. 
-> Check out the [Authentication section in the ContraForce API Overview](https://github.com/ContraForce/contraforce-api/tree/main/Docs#authentication-for-the-contraforce-partner-api) to learn more.
+> The List Incidents Endpoint is authenticated with an API key which is required to access resources. 
+> Review the [Authentication section in the ContraForce API Overview](https://github.com/ContraForce/contraforce-api/tree/main/Docs#authentication-for-the-contraforce-partner-api) to learn more.
 
 ## List Incidents Request
-To list all the incidents in your tenant or any of your managed customer's tenant
+To list all the incidents in your tenant or any of your managed customers tenants:
  
 ![](https://img.shields.io/badge/HTTP-POST-blue)
 
@@ -27,39 +27,39 @@ To list all the incidents in your tenant or any of your managed customer's tenan
  POST 
  https://portal.contraforce.com/api/beta/partners/incidents?tenantId=[TARGET_TENANT_ID]
 ```
-Not all the incidents are being retrieved at once, when you send the request only top 50 incidents will be retrieved with a token that you can send in the parameters to retrieve the next chunk and so on. 
+Not all the incidents are retrieved with a single request. When you send the request only the top 50 incidents will be retrieved. A token can then be re-generated and used to ingest the next 50 incidents after the initial request.
 
 ## Parameters 
-The list incidents *POST* accepts set of parameters for filtering, pagination, and or limiting the number of objects retrieved. 
+The List Incidents *POST* accepts a set of parameters for filtering, pagination, and/or limiting the number of objects retrieved. 
 The following table shows all the parameters accepted by the endpoint with its default values: 
 
 |Parameter | Description | Usage | Default Value | Format | Required|
 |--|--|--|--|--|--|
-| tenantId | The tenant id of the your organization or any of your managed customer tenants | ?tenantId=a1d9fe42-913e-4204-af1b-31b9a76b4d73 | None | GUID | Yes |
+| tenantId | The Tenant ID of the your organization or any of your managed customer tenants | ?tenantId=a1d9fe42-913e-4204-af1b-31b9a76b4d73 | None | GUID | Yes |
 
 ## Request Body
-The request has to be in the JSON format and could contain none or any of the following properties in the JSON object to filter the requested incidents 
+The request has to be in JSON format and could contain none or any of the following properties to filter the returned incidents. 
 
 | Property | Description | Usage | Default Value | Format | Required|
 |--|--|--|--|--|--|
-| take | Define the number of the incidents to be retrieved in the response at a time (Maximum 100)  | "take": 10 | 50 | int (1, 2, ..1000) | No |
-| query | Search query to filter the incidents by various properties (number, title, description) | "query": "access from" | None | (string) text | No |
-| startDate | Define the oldest (Minimum) date of the incidents | "startDate"="2023-02-1" | 24 Hours back | yyyy-MM-ddTHH:mm:ss.fffZ (2023-02-03T16:34:46.5737663Z) | No |
+| take | Limits the number of incident objects retrieved at a time  | "take": 10 | 50 | int (1, 2, ..1000) | No |
+| query | Search query to filter the incidents by various properties (number, title, description) | "query": "access fro" | None | (string) text | No |
+| startDate | Define the oldest (minimum) date of the incidents | "startDate"="2023-02-1" | 24 Hours back | yyyy-MM-ddTHH:mm:ss.fffZ (2023-02-03T16:34:46.5737663Z) | No |
 | endDate| Define the newest (maximum) date of the incidents | "endDate"="2023-02-10" | Current date/time | yyyy-MM-ddTHH:mm:ss.fffZ (2023-02-10T16:34:46.5737663Z) | No |
-| pageToken | Define the token of the next page (the value retrieved in the response when there is still incidents not retreived due to the maximum limits reached of the retreived incidents (100 incidents retrieved and 900 remaining), so you can pass the token received in the response to retrieve the next chunk of incidents for the same filter applied) | "pageToken"="FDDdfa43yy4ejlkas5r43..." | None | (string) text | No |
+| pageToken | Define the token of the next page (the value retrieved in the response when the maximum limit of returned incidents is reached, so you pass the token from the response to retrieve the next chunk of data for the same filter applied) | "pageToken"="FDDdfa43yy4ejlkas5r43..." | None | (string) text | No |
 
-Following shows sample requests with a combination of the mentioned parameters above: 
-### Retrieve the latest incidents
+The following shows sample requests with a combination of the mentioned parameters above: 
+### Retrieve the Latest Incidents
 ``` HTTP
 POST /incidents?tenantId=a1d9fe42-913e-4204-af1b-31b9a76b4d73
 ```
 And the body can be empty so no filters applied, you will get the latest 50 incidents as they are sorted in the Azure Sentinel
 
-### Retrieve latest 10 incidents in the last week 
+### Retrieve the most recent 10 incidents from the last 7 days 
 ``` HTTP
 POST /incidents?tenantId=a1d9fe42-913e-4204-af1b-31b9a76b4d73
 ```
-And the body is the following JSON 
+And the body is the following JSON: 
 ``` JSON
 {
     "take": 10,
@@ -67,8 +67,7 @@ And the body is the following JSON
 }
 ```
 
-As of the date Feb 10th, 2023, the start date provided is 7 days back. 
-### Retrieve all the incidents of January 2023 
+### Retrieve all incidents for a month
 ``` HTTP
 POST /incidents?tenantId=a1d9fe42-913e-4204-af1b-31b9a76b4d73
 ```
@@ -80,11 +79,13 @@ And the body is the following JSON
 }
 ```
 
-If the number of incidents are more than 50 then a ***nextPageToken*** will be retrieved in the response and you can use it to retrieve the next page as shown 
+The example is for January.
+
+If the number of incidents retreived is more than 50 then a ***nextPageToken*** will be retrieved in the response and you can use it to retrieve the next 50 incidents as shown below:  
 ``` HTTP
 POST /incidents?tenantId=a1d9fe42-913e-4204-af1b-31b9a76b4d73&take=10&startDate=2023-01-01&endDate=2023-01-31&token=AAAAABBBBCCCC...
 ```
-And the body is the following JSON 
+And the body is the following JSON: 
 ``` JSON
 {
     "pageToken": "RGJLK546T54DFSGDJLG5T54.........",
@@ -102,9 +103,8 @@ In case the request processed successfully, the response of the list incidents r
 
 | Property | Description | Sample Value |
 |--|--|--|
-| value | Object represents a page contains list of incidents and a next page token if it's there | [Incidents List Object](#incidents-list-object) | 
+| value | Object represents a page contains list of incidents and a next page token if needed | [Incidents List Object](#incidents-list-object) | 
 | message | The status of the request or the error message in case of request failure | Incidents have been retrieved successfully! |
-AAAAABBBCCCEDFASDF.....|
 | isSuccess | It has the value of true | true |
 
 ![](https://img.shields.io/badge/Response-400-red)
@@ -173,7 +173,7 @@ Following is a sample
 
 ### Sample response 
 
-To know more details about the Incident object please referee to [Incident Object](https://github.com/ContraForce/contraforce-api/blob/main/Docs/incident-object.md)
+To see more details about the Incident object please referee to [Incident Object](https://github.com/ContraForce/contraforce-api/blob/main/Docs/incident-object.md).
 
 ``` JSON
 {
@@ -244,8 +244,8 @@ To know more details about the Incident object please referee to [Incident Objec
 ```
 
 ## Demo Request and Response 
-ContraForce Parnter API allows you to test the call quickly using a demo endpoints. 
-In the development environment you can use the demo enpoints so the parameters passed won't be vaildated and you will be retrieving a valid response with sample data everytime even if there was no data for the time period or the passed query, that makes your development experience faster and smoother. 
+The ContraForce API allows you to test the call quickly using demo endpoints. 
+In the development environment you can use demo enpoints so that the parameters passed won't be vaildated and you will be retrieving a valid response with sample data even if there is no data for that time. This will allow testing at any time to make the development experience faster and smoother.
 
 > The demo request also requires an API Key, but any parameters passed will be ignored in the result, as you will always get the same result. 
 
