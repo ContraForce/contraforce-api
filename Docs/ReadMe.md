@@ -1,6 +1,6 @@
 # Overview
-ContraForce API provides you access to the ContraForce data using various exposed API endpoints. 
-The incidents API allows you to achieve the following: 
+The ContraForce API provides you access to ContraForce Portal data using various exposed API endpoints. 
+The ContraForce API allows the use the following requests: 
   - [List Incidents Request](https://github.com/ContraForce/contraforce-api/blob/main/Docs/list-incidents.md)
   - [Get Incident Details Request](https://github.com/ContraForce/contraforce-api/blob/main/Docs/get-incident-details.md)
   - [List Incident Entities Request](https://github.com/ContraForce/contraforce-api/blob/main/Docs/list-incident-entities.md)
@@ -8,27 +8,27 @@ The incidents API allows you to achieve the following:
 
 To learn more about the ContraForce **Incident Object** please refer to  [ContraForce Incident Object](https://github.com/ContraForce/contraforce-api/blob/main/Docs/incident-object.md)
 
-> ContraForce Partners API is currently in beta, in case of errors or unexpected behaviors, feel free to submit a new issue [here](https://github.com/ContraForce/contraforce-api/issues/new) 
-> The final version is currently planned to be released for Q2 in 2022
+> The ContraForce API is currently in beta. If you encounter any errors or unexpected behavior you can submit an issue [here](https://github.com/ContraForce/contraforce-api/issues/new). 
+> ContraForce plans to release the final version of the API in Q2 of 2023.
 
-This document covers the following topics
+This ReadMe document covers the following topics:
 - [Overview](#overview)
 	- [Multi-tenancy in ContraForce](#multi-tenancy-in-contraforce)
-	- [Authentication for the ContraForce Partner API](#authentication-for-the-contraforce-partner-api)
-	- [Testing the ContraForce Partner API](#testing-the-contraforce-partner-api)
-	- [ContraForce Partner API Endpoints](#contraforce-partner-api-endpoints)
+	- [Authentication for the ContraForce API](#authentication-for-the-contraforce-partner-api)
+	- [Testing the ContraForce API](#testing-the-contraforce-partner-api)
+	- [ContraForce API Endpoints](#contraforce-partner-api-endpoints)
 
-## Multi-tenancy in ContraForce
-Through the ContraForce Partner program, partners can onboard and manage their own customers to ContraForce. By using the ContraForce Partners API, you can retrieve the data from ContraForce for your own organization or your customer organizations. 
+## Multi-Tenancy in ContraForce
+Through the ContraForce Partner Program, partners can create ContraForce environments for their customers and then manage their incidents and connected data sources within the ContraForce web application. The ContraForce API allows users to retrieve portal data via API calls in addition to web application user interface.
 
 ![ContraForce Multi-Tenancy Diagram](https://github.com/ContraForce/contraforce-api/blob/main/Images/Multi-Tenancy%20Flow%20for%20Partners.drawio.svg?raw=true)
 
-Based on the previous flow, if you are a ContraForce partner, you should be able to access all your data and your direct customers data using the ContraForce Partner API.
-That's why any request you send to the ContraForce Partner API, the **Tenant Id** is a mandatory parameter. 
+ContraForce environments are created per customer. Because of this, a **Tenant ID** is a mandatory parameter for any ContraForce API request. By sepcifying the Tenant ID in the request body, partners are enabled to access data for any of the customer ContraForce environments under their management.
 
-## Authentication for the ContraForce Partner API
-The current version of the exposed endpoints of the ContraForce Partner API is secured using an ***API Key***, you can request an API key when you are a ContraForce partner and you would like to have an API access, the ContraForce team you will send an API key during the onboarding process. 
-The key must be sent in the header of each HTTP request you are making to the ContraForce Partner API as shown below for a C# example: 
+## Authentication for the ContraForce API
+In the current version of the ContraForce API, the exposed endpoints of the API are secured using an ***API Key***. An API key can be requested after Partner Onboarding has been completed. A member of the ContraForce Engineering team will provide you with an API key and assist you with the connection process.
+
+The generated API key must be sent in the header of each HTTP request you are making to the ContraForce API as shown below for a C# example: 
 ``` C#
 using (var client = new HttpClient())
 {
@@ -39,25 +39,29 @@ using (var client = new HttpClient())
 	...
 }
 ```
-If you are test the API calls using **Postman**, you can set the API key as shown below: 
+If you are testing the API calls using **Postman**, you can set the API key as shown below: 
 
 ![Set API key for the authorization of the HTTP Header](https://github.com/ContraForce/contraforce-api/blob/main/Images/Postman%20screenshot%20for%20authentication.png?raw=true)
 
 
-## Testing the ContraForce Partner API
-After you obtain your API key, you can send a test request to make sure that everything is right for you:
+## Testing the ContraForce API
+After you obtain an API key, you can send a test request to ensure that the ContraForce API is functioning as intended.
 
 ![](https://img.shields.io/badge/HTTP-GET-green)
 ```
 https://portal.contraforce.com/api/beta/partners
 ```
-Once you submit the request successfully you should get a JSON response with a welcome message.
+After you submit the test request, a sucess response should appear as shown below.
 ``` JSON
 {
-	"message": "Welcome to ContraForce API"
+	"message": "Welcome to the ContraForce API"
 }
 ```
 
-## ContraForce Partner API Endpoints
-Following links provide a detailed documentation about each available endpoint in the current beta version of the ContraForce Partner API
+## ContraForce API Endpoints
+The following links provide a detailed documentation about each available endpoint in the current beta version of the ContraForce API:
+ - [List Incidents Request](https://github.com/ContraForce/contraforce-api/blob/main/Docs/list-incidents.md)
+  - [Get Incident Details Request](https://github.com/ContraForce/contraforce-api/blob/main/Docs/get-incident-details.md)
+  - [List Incident Entities Request](https://github.com/ContraForce/contraforce-api/blob/main/Docs/list-incident-entities.md)
+  - [List Incident Evidence Request](https://github.com/ContraForce/contraforce-api/blob/main/Docs/list-incident-evidence.md)
 
