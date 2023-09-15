@@ -6,12 +6,12 @@ This document covers the following topics:
   - [List Incidents Request](#list-incidents-request)
   - [Parameters](#parameters)
   - [Request Body](#request-body)
-    - [Retrieve the latest Incidents](#retrieve-the-latest-incidents)
-    - [Retrieve the most recent 10 incidents from the last 7 days](#retrieve-latest-10-incidents-in-the-last-week)
-    - [Retrieve all incidents for a month](#retrieve-all-the-incidents-of-january-2023)
+    - [Retrieve the Latest Incidents](#retrieve-the-latest-incidents)
+    - [Retrieve the most recent 10 incidents from the last 7 days](#retrieve-the-most-recent-10-incidents-from-the-last-7-days)
+    - [Retrieve all incidents for a month](#retrieve-all-incidents-for-a-month)
   - [Response](#response)
     - [Incidents List Object](#incidents-list-object)
-    - [Sample Response](#sample-response)
+    - [Sample response](#sample-response)
   - [Demo Request and Response](#demo-request-and-response)
 
 
@@ -47,6 +47,8 @@ The request has to be in JSON format and could contain none or any of the follow
 | startDate | Define the oldest (minimum) date of the incidents | "startDate"="2023-02-1" | 24 Hours back | yyyy-MM-ddTHH:mm:ss.fffZ (2023-02-03T16:34:46.5737663Z) | No |
 | endDate| Define the newest (maximum) date of the incidents | "endDate"="2023-02-10" | Current date/time | yyyy-MM-ddTHH:mm:ss.fffZ (2023-02-10T16:34:46.5737663Z) | No |
 | pageToken | Define the token of the next page (the value retrieved in the response when the maximum limit of returned incidents is reached, so you pass the token from the response to retrieve the next chunk of data for the same filter applied) | "pageToken"="FDDdfa43yy4ejlkas5r43..." | None | (string) text | No |
+status | Filter the incidents by their status | "status": "new" | None | Values "new", "active", "closed" | No |
+severity | Filter the incidents by their severity | "severity": "medium" | None | Values "informational", "low", "medium", "high" | No |
 
 The following shows sample requests with a combination of the mentioned parameters above: 
 ### Retrieve the Latest Incidents
