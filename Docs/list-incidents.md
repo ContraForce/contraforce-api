@@ -157,7 +157,7 @@ Following is a sample
                 "classificationComment": null,
                 "tactics": null,
                 "ruleIds": null,
-                "alertProductNames": null,
+                "alertProductNames": [],
                 "user": {
                     "id": null,
                     "displayName": null,
@@ -199,7 +199,7 @@ To see more details about the Incident object please referee to [Incident Object
                 "classificationComment": null,
                 "tactics": null,
                 "ruleIds": null,
-                "alertProductNames": null,
+                "alertProductNames": [],
                 "user": {
                     "id": null,
                     "displayName": null,
@@ -227,7 +227,7 @@ To see more details about the Incident object please referee to [Incident Object
                 "classificationComment": null,
                 "tactics": null,
                 "ruleIds": null,
-                "alertProductNames": null,
+                "alertProductNames": [],
                 "user": {
                     "id": null,
                     "displayName": null,

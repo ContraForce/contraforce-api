@@ -94,7 +94,7 @@ To know more details about the Incident object please refer to [Incident Object]
             "/subscriptions/454dff-4455-41eb-4545454-85e97cacec70/resourceGroups/contraforce-rg/providers/Microsoft.OperationalInsights/workspaces/cf-loganalytics-ws/providers/Microsoft.SecurityInsights/alertRules/666851279-5f95-4f5b-8ffb-7ec11cb158e4"
         ],
         "alertProductNames": [
-            "Azure Sentinel"
+            "Microsoft Defender for Endpoint"
         ],
         "user": {
             "id": null,

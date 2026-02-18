@@ -10,6 +10,7 @@ Below are links for ContraForce API documentation. This documentation covers the
 
 - [ContraForce API](https://github.com/ContraForce/contraforce-api/tree/main/Docs)
   - [Incident Object](https://github.com/ContraForce/contraforce-api/blob/main/Docs/incident-object.md)
+  - [List All Workspaces Incidents Request](https://github.com/ContraForce/contraforce-api/blob/main/Docs/list-all-workspaces-incidents.md) - Fetch incidents from all managed workspaces in one call
   - [List Incidents Request](https://github.com/ContraForce/contraforce-api/blob/main/Docs/list-incidents.md)
   - [Get Incident Details Request](https://github.com/ContraForce/contraforce-api/blob/main/Docs/get-incident-details.md)
   - [List Incident Entities Request](https://github.com/ContraForce/contraforce-api/blob/main/Docs/list-incident-entities.md)
