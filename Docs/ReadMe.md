@@ -1,6 +1,7 @@
 # Overview
 The ContraForce API provides you access to ContraForce Portal data using various exposed API endpoints. 
-The ContraForce API allows the use the following requests: 
+The ContraForce API allows the use the following requests:
+  - [List All Workspaces Incidents Request](https://github.com/ContraForce/contraforce-api/blob/main/Docs/list-all-workspaces-incidents.md) - Fetch incidents from all managed workspaces in one call
   - [List Incidents Request](https://github.com/ContraForce/contraforce-api/blob/main/Docs/list-incidents.md)
   - [Get Incident Details Request](https://github.com/ContraForce/contraforce-api/blob/main/Docs/get-incident-details.md)
   - [List Incident Entities Request](https://github.com/ContraForce/contraforce-api/blob/main/Docs/list-incident-entities.md)
@@ -60,7 +61,8 @@ After you submit the test request, a sucess response should appear as shown belo
 
 ## ContraForce API Endpoints
 The following links provide a detailed documentation about each available endpoint in the current beta version of the ContraForce API:
- - [List Incidents Request](https://github.com/ContraForce/contraforce-api/blob/main/Docs/list-incidents.md)
+  - [List All Workspaces Incidents Request](https://github.com/ContraForce/contraforce-api/blob/main/Docs/list-all-workspaces-incidents.md) - Fetch incidents from all managed workspaces in one call
+  - [List Incidents Request](https://github.com/ContraForce/contraforce-api/blob/main/Docs/list-incidents.md)
   - [Get Incident Details Request](https://github.com/ContraForce/contraforce-api/blob/main/Docs/get-incident-details.md)
   - [List Incident Entities Request](https://github.com/ContraForce/contraforce-api/blob/main/Docs/list-incident-entities.md)
   - [List Incident Evidence Request](https://github.com/ContraForce/contraforce-api/blob/main/Docs/list-incident-evidence.md)

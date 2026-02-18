@@ -27,7 +27,7 @@ The documentation below covers the definition of the ***Incident*** object and e
         "/subscriptions/454dff-4455-41eb-4545454-85e97cacec70/resourceGroups/contraforce-rg/providers/Microsoft.OperationalInsights/workspaces/cf-loganalytics-ws/providers/Microsoft.SecurityInsights/alertRules/666851279-5f95-4f5b-8ffb-7ec11cb158e4"
     ],
     "alertProductNames": [
-        "Azure Sentinel"
+        "Microsoft Defender for Endpoint"
     ],
     "user": {
         "id": null,
@@ -49,7 +49,7 @@ The following table explains each property and the value it represents.
 | title | (string) - text | Title of the incident | New authentication attempt for the user sample@user.com from a new geo-location | No |
 | description | (string) - text | Further details about the incident and explination | User with the email sample@user.com has tried to authenticate from a new location muliple times ... | Yes |
 | number | (int) - number | Reference number of the incident | 351 | No |
-| type | (string) - text | The source of the incident | Microsoft.SecurityInsights/Incidents | Yes |
+| type | (string) - text | The source type of the incident | Microsoft.SecurityInsights/Incidents | Yes |
 | lastModificationTime | date/time (UTC) | Date/Time of the last update happened to the incident | 2023-02-09T10:38:47.0111424Z | No | 
 | creationTime | date/time (UTC) | The creation date/time of the incident | 2023-02-09T10:38:47.0111424Z |  No | 
 | lastActivityTime | date/time (UTC) | Date/Time of the last activitity in the incident | 2023-02-09T10:38:47.0111424Z |  Yes | 
@@ -59,7 +59,7 @@ The following table explains each property and the value it represents.
 | classificationComment | (string) - text | Comments about the classification | Filled by the user when closing the incident | Yes |
 | tactics | (array of string) | Set of the tactics targeted by the incident based on the MITRE framework | [ "Initial Access", "Execution" ] | Yes |
 | ruleIds | (array of string) | Id of the rules that triggered the incident in the Azure Sentinel of the customer | [ "/subscriptions/454dff-4455-41eb-4545454-85e97cacec70/resourceGroups/contraforce-rg/providers/Microsoft.OperationalInsights/workspaces/cf-loganalytics-ws/providers/Microsoft.SecurityInsights/alertRules/666851279-5f95-4f5b-8ffb-7ec11cb158e4" ] | Yes |
-| alertProductNames | (array of string) | Names of the products that caused the alerts | [ "Azure Sentinel", "Microsoft Defender for Endponit" ] | Yes |
+| alertProductNames | (array of string) | Names of the security products that generated the alerts (e.g., "Microsoft Defender for Endpoint", "SentinelOne"). Always present — returns an empty array `[]` if no product names are available | [ "Microsoft Defender for Endpoint" ] | No |
 | user | JSON Object | Object about the user assigned to the incident | { "id": "345434534-43534-54325435-43523", "displayName: "John Smith", "email": "johnsmith@test.com" } **Please Note** that the properties of the object will be null when the incident is not assigned  | No |
 | isAssigned | Boolean true/false | Indicator if the incident is assigned for a user or not | True  | Yes |
 | productId | (string) - GUID | Id of the product that this incident is related to | 534543545-234234-45435-23423  | Yes |
