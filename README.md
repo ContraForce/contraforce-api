@@ -1,10 +1,17 @@
 # Welcome to ContraForce
 
+> [!IMPORTANT]
+> **This repository has been archived.**
+>
+> The ContraForce API documentation has moved. Please refer to the current documentation at <https://docs.contraforce.com/api-reference/endpoints>.
+>
+> This repository is read-only and no longer maintained.
+
 The ContraForce platform condenses your existing Microsoft security stack into a centralized dashboard that is easy to understand and even easier to deploy. Within the ContraForce portal, users can investigate and respond to incidents and build a holistic security program quickly and easily.
 
 ![Gamebooks Page](Images/command-dashboard-github.svg)
 
-# ContraForce API Documentation
+## ContraForce API Documentation
 
 Below are links for ContraForce API documentation. This documentation covers the technical usage for all request types used in the ContraForce API
 
